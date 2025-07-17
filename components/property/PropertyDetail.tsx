@@ -2,63 +2,79 @@ import Header from "@/components/layout/Header";
 import { PropertyProps } from "@/interfaces/index";
 import Image from "next/image";
 import Footer from "@/components/layout/Footer";
+import PropertyGrid from "../common/PropertyGrid";
+import Tab from "@/components/common/tab";
+import BookingSection from "@/components/property/BookingSection";
+import React from "react";
 
 const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => {
   return (
     <>
       <Header />
-      <div className="container mx-auto p-6">
+      <div className="container mx-auto p-6 font-sm">
         <h1 className="text-4xl font-bold">{property.name}</h1>
         <div className="flex items-center space-x-2 mt-2">
-          <span className="text-yellow-500">{property.rating} stars</span>
-          <span>{property.address.city}, {property.address.country}</span>
+          <span className="text-black text-sm">
+            ⭐ {property.rating} (376 reviews)
+          </span>
+          <span className="text-black text-sm">
+            <Image
+              src="/assets/icons/Bold/Map & Location/Map Point.png"
+              alt="Location"
+              width={16}
+              height={16}
+              className="inline-block mr-1"
+            />
+            {property.address.city}, {property.address.country}
+          </span>
+          <span className="text-black text-sm">
+            <Image
+              src="/assets/icons/profile 1.png"
+              alt="Location"
+              width={16}
+              height={16}
+              className="inline-block ml-2"
+            />{" "}
+            Mainstream
+          </span>
+          <div className="flex items-center ml-auto gap-2 text-sm">
+            <span className="flex items-center border border-gray-300 px-2 py-1 rounded-full text-center whitespace-nowrap">
+              <Image
+                src="/assets/icons/Fav.png"
+                alt="save"
+                width={22}
+                height={22}
+                className="items-center inline-block p-1 bg-white"
+              />
+              Save
+            </span>
+            <span className="flex items-center border border-gray-300 px-2 py-1 rounded-full text-center whitespace-nowrap">
+              <Image
+                src="/assets/icons/Share.png"
+                alt="share"
+                width={22}
+                height={22}
+                className="items-center inline-block p-1.5 bg-white"
+              />
+              Share
+            </span>
+          </div>
         </div>
 
         {/* Image Grid */}
-         {property.images && property.images.length >= 5 ? (
-  <div className="mt-6 grid grid-cols-4 grid-rows-2 gap-4 h-[500px]">
-    {/* Main Image */}
-    <div className="col-span-2 row-span-2 relative">
-      <Image
-        src={property.images[0]}
-        alt="Main Image"
-        fill
-        className="object-cover rounded-lg"
-      />
-    </div>
+        <PropertyGrid data={property} />
 
-    {/* Additional Images */}
-    {property.images.slice(1, 3).map((img, index) => (
-      <div key={index} className="relative w-full h-full">
-        <Image
-          src={img}
-          alt={`Image ${index + 1}`}
-          fill
-          className="object-cover rounded-lg"
-        />
-      </div>
-    ))}
-  </div>
-) : (
-  <p className="text-gray-500 mt-4">Not enough images to display a collage.</p>
-)}
+        {/* Description and other tabs */}
+        <div className="flex flex-col-2 border-gray-300 mt-4">
+          {/* Description Tab */}
+          <div>
+            <Tab/>
+          </div>
 
-        {/* Description */}
-        <div className="mt-4">
-          <h2 className="text-2xl font-semibold">Description</h2>
-          <p>{property.description}</p>
-        </div>
-
-        {/* Amenities */}
-        <div className="mt-4">
-          <h2 className="text-2xl font-semibold">What this place offers</h2>
-          <ul className="flex flex-wrap space-x-4">
-            {property.category.map((amenity, index) => (
-              <li key={index} className="bg-gray-200 p-2 rounded-md">
-                {amenity}
-              </li>
-            ))}
-          </ul>
+          {/*Booking Card */}
+          <div>
+            <BookingSection price={property.price} />
+          </div>
         </div>
       </div>
       <Footer />

@@ -39,3 +39,14 @@ export interface PropertyProps {
 export interface PropertyCardProps {
   data: PropertyProps;
 }
+
+
+export interface PropertyGridProps {
+  data: {
+    offers: {
+      bed: number;
+      shower: number;
+      occupants: number;
+    };
+  };
+}
