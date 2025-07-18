@@ -11,7 +11,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
   return (
     <>
       <Header />
-      <div className="container mx-auto p-6 font-sm">
+      <div className="container mx-auto p-6 font-sm overflow-x-hidden">
         <h1 className="text-4xl font-bold">{property.name}</h1>
         <div className="flex items-center space-x-2 mt-2">
           <span className="text-black text-sm">
@@ -67,7 +67,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
         {/* Description and other tabs */}
         <div className="flex flex-col-2 border-gray-300 mt-4">
           {/* Description Tab */}
-          <div>
+          <div >
             <Tab/>
           </div>
 

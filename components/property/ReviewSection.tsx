@@ -1,17 +1,42 @@
-const ReviewSection: React.FC<{ reviews: any[] }> = ({ reviews }) => {
+import React from 'react';
+import Image from 'next/image';
+import { myReviewArray } from '@/constants';
+
+interface ReviewSectionProps {
+  reviews?: any[];
+  rating: number;
+}
+
+
+
+const ReviewSection: React.FC<ReviewSectionProps> = ({ reviews = [],rating }) => {
   return (
-    <div className="mt-8">
-      <h3 className="text-2xl font-semibold">Reviews</h3>
+    <div className="grid grid-cols-2 sm:col-span-1 mt-8">
+      <h3 className="text-md font-semibold col-span-2">
+        ⭐ {rating} ({reviews.length} reviews)
+      </h3>
       {reviews.map((review, index) => (
-        <div key={index} className="border-b pb-4 mb-4">
-          <div className="flex items-center">
-            <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full mr-4" />
-            <div>
-              <p className="font-bold">{review.name}</p>
-              <p className="text-yellow-500">{review.rating} stars</p>
-            </div>
+        <div key={index} className="text-xs pb-2 px-2 py-1 mb-4 mt-8 ">
+          <div className="flex mb-1">
+            <Image 
+              src={review.avatar} 
+              alt={review.name} 
+              width={40}
+              height={40}
+              className="rounded-full mr-4"
+            />
+              <p className="mb-0 font-bold">
+                {review.name}
+              </p>
           </div>
-          <p>{review.comment}</p>
+          <div>
+            <p className="ml-14 mb-2 text-gray-500">{review.work}</p>
+          </div>
+          <p className="mb-4">
+            {review.date}
+            <p className="inline-block pl-2 text-gray-500">{review.place}</p>
+          </p>
+          <p className="md:grid grid-cols-2 sm:cols-1 text-black ">{review.comment}</p>
         </div>
       ))}
     </div>

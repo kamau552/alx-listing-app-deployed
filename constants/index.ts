@@ -430,3 +430,41 @@ export const footerLinks = [
   }
 ];
 
+export const myReviewArray = [
+  {
+    avatar: '/assets/Images/image-25.png',
+    name: 'Kerry',
+    work: '3 years on ALX',
+    date: 'March 2024' ,
+    place: ' •  Family trip',
+    rating: 5,
+    comment: 'I simply don’t have the words to describe how incredibly beautiful the villa and its surroundings are. This is a wonderful remote spot that is simply breathtaking'
+  },
+  {
+    avatar: '/assets/Images/image-25-1.png',
+    name: 'Pooja',
+    work: '1 year on ALX',
+    date: 'March 2024' ,
+    place: ' •  Family trip',
+    rating: 5,
+    comment: 'We stayed at this home for a family vacation of 7 adults (including 3 couples, 1 baby) and had a fantastic stay. The house was BEAUTIFUL and honestly better than shown in pictures, '
+  },
+  {
+    avatar: '/assets/Images/image-25-2.png',
+    name: 'Cindy & Ben',
+    work: '1 year at ALX',
+    date: 'August 2024' ,
+    place: ' •  Family trip',
+    rating: 5,
+    comment: 'I simply don’t have the words to describe how incredibly beautiful the villa and its surroundings are. This is a wonderful remote spot that is simply breathtaking'
+  },
+  {
+    avatar: '/assets/Images/image-25-3.png',
+    name: 'Marnie',
+    work: '5 years at ALX',
+    date: 'January 2024' ,
+    place: ' •  Family trip',
+    rating: 5,
+    comment: 'We stayed at this home for a family vacation of 7 adults (including 3 couples, 1 baby) and had a fantastic stay. The house was BEAUTIFUL and honestly better than shown in pictur'
+  },
+];
