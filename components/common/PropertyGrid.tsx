@@ -13,28 +13,28 @@ const images = [
 
 const PropertyGrid: React.FC<PropertyGridProps> = ({ data }) => {
   return (
-    <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[500px] py-2 mt-2 break-inside-avoid">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-auto py-2 mt-2 p-2 md:p-4">
       {/*Large Image*/}
-      <div className="col-span-2 row-span-2 sm:col-span-2 relative">
+      <div className="relative col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 h-[250px] sm:h-[400px] md:h-[500px]">
         <Image
           src={images[0]}
           alt="Large Property Image"
           fill
-          className="object-cover w-full rounded-lg md:h-[500px]"
+          className="object-cover w-full rounded-lg "
         />
       </div>
 
       {/*Medium Images*/}
-      <div className="col-span-2 row-span-1 relative">
+      <div className="relative col-span-2 h-[150px] sm:h-[200px] md:h-[250px]  hidden sm:block sm:">
         <Image
           src={images[1]}
           alt="Medium Property Image"
           fill
-          className="object-cover w-full rounded-lg md:h-[300px]"
+          className="object-cover w-full rounded-lg"
         />
       </div>
       {/* small image 1 */}
-      <div className="col-span-1 row-span-1 relative sm:block sm:col-span-1">
+      <div className="relative col-span-1 h-[150px] sm:h-[200px] md:h-[250px] hidden sm:block sm:col-span-1 row-span-1">
         <Image
           src={images[2]}
           alt="Medium Property Image"
@@ -43,23 +43,23 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ data }) => {
         />
       </div>
       {/* small image 2 */}
-      <div className="col-span-1 row-span-1 sm:block relative">
+      <div className="relative col-span-1 h-[150px] sm:h-[200px] md:h-[250px] hidden sm:block sm:col-span-1 row-span">
         <Image
           src={images[3]}
           alt="Medium Property Image"
           fill
-          className="object-cover w-full rounded-lg md:w-full md:h-[300px]"
+          className="object-cover w-full rounded-lg"
         />
         {/* show more photos button */}
-        <span className="object-bottom absolute bottom-2.5 left-20 right-20 px-3 py-2 rounded-b-lg text-center">
-          <button className="flex object-bottom border-1 border-white font-extralight text-xs text-white px-5 py-1 rounded-full text-center whitespace-nowrap backdrop-blur-sm backdrop-brightness-100 hover:backdrop-blur-lg hover:text-black transition-colors duration-300">
+        <span className="absolute bottom-2 left-1/2 -translate-x-1/2">
+          <button className="border border-white font-light text-xs text-white px-4 py-1 rounded-full backdrop-blur-sm hover:text-black hover:bg-white transition">
             show all photos
           </button>
         </span>
       </div>
 
       {/*Additional Features */}
-      <div className="flex flex-row items-center gap-2 w-full text-xs">
+      <div className="flex flex-row items-center gap-2 w-full text-xs sm:absolute">
         {/* Bed */}
         <div className="flex items-center gap-2 border border-gray-300 px-3 py-1 rounded-full text-center whitespace-nowrap">
           <Image

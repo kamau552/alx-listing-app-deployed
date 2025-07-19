@@ -9,34 +9,39 @@ interface ReviewSectionProps {
 
 
 
-const ReviewSection: React.FC<ReviewSectionProps> = ({ reviews = [],rating }) => {
+const ReviewSection: React.FC<ReviewSectionProps> = ({
+  reviews = [],
+  rating,
+}) => {
   return (
-    <div className="grid grid-cols-2 sm:col-span-1 mt-8">
-      <h3 className="text-md font-semibold col-span-2">
+    <div className="grid grid-cols-2 gap-x-6 gap-y-3"> {/* Reduced vertical gap */}
+      <h3 className="text-sm font-semibold col-span-2 mb-1"> {/* Smaller text and margin */}
         ⭐ {rating} ({reviews.length} reviews)
       </h3>
       {reviews.map((review, index) => (
-        <div key={index} className="text-xs pb-2 px-2 py-1 mb-4 mt-8 ">
-          <div className="flex mb-1">
-            <Image 
-              src={review.avatar} 
-              alt={review.name} 
-              width={40}
-              height={40}
-              className="rounded-full mr-4"
+        <div key={index} className="text-xs pr-4"> {/* Added right padding */}
+          <div className="flex items-start gap-1.5"> {/* Tighter gap */}
+            <Image
+              src={review.avatar}
+              alt={review.name}
+              width={28} 
+              height={28}
+              className="rounded-full"
             />
-              <p className="mb-0 font-bold">
-                {review.name}
+            <div>
+              <p className="font-bold leading-none">{review.name}</p> {/* Tighter line */}
+              <p className="text-gray-500 text-[0.65rem] leading-none mt-2"> {/* Smaller text */}
+                {review.work}
               </p>
+            </div>
           </div>
-          <div>
-            <p className="ml-14 mb-2 text-gray-500">{review.work}</p>
-          </div>
-          <p className="mb-4">
+          <div className="mt-0.5 text-gray-500 text-xs"> {/* Smaller margin */}
             {review.date}
-            <p className="inline-block pl-2 text-gray-500">{review.place}</p>
+            {review.place && <span className="ml-1">{review.place}</span>}
+          </div>
+          <p className="mt-1 text-black text-sm leading-snug"> {/* Compact text */}
+            {review.comment}
           </p>
-          <p className="md:grid grid-cols-2 sm:cols-1 text-black ">{review.comment}</p>
         </div>
       ))}
     </div>

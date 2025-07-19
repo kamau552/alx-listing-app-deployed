@@ -20,7 +20,7 @@ const Tab = () => {
     { id: 'tab1', name: 'Description', ref: sectionRefs.description },
     { id: 'tab2', name: 'What we offer', ref: sectionRefs.whatWeOffer },
     { id: 'tab3', name: 'Reviews', ref: sectionRefs.reviews },
-    { id: 'tab4', name: 'About host', ref: sectionRefs.aboutHost },
+    { id: 'tab4', name: 'About', ref: sectionRefs.aboutHost },
   ];
 
   const handleTabClick = (tabId: string, ref: React.RefObject<HTMLDivElement>) => {
@@ -29,15 +29,15 @@ const Tab = () => {
   };
 
   return (
-    <div className="w-full px-4 text-md max-h-full">
-      <div className="w-full bg-white p-4">
+    <div className="w-full px-4 max-w-7xl mx-auto mt-6 sm:pr-2 whitespace-wrap">
+      <div className="w-full bg-white">
         {/* Tabs */}
-        <div className="flex border-b border-t border-gray-300 text-gray-500 text-md top-0 bg-white z-10 pt-4 pb-0">
+        <div className="flex border-b border-t border-gray-300 text-gray-500 text-sm top-0 bg-white z-10 pt-4 pb-0">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => handleTabClick(tab.id, tab.ref)}
-              className={`px-3 py-2 text-xs font-medium border-b-2 ${
+              className={`px-4 py-2 font-medium whitespace-nowrap border-b-2 ${
                 activeTab === tab.id
                   ? "border-teal-600 text-teal-600"
                   : "border-transparent"
@@ -49,15 +49,15 @@ const Tab = () => {
         </div>
 
         {/* Content */}
-        <div className="max-h-[600px] overflow-hidden">
+        <div>
           {/* Description Section */}
           <div
             ref={sectionRefs.description}
             id="description"
             className="pt-2 mb-2"
           >
-            <div className=" text-black space-y-3 pt-4 items-center">
-              <p className="text-sm">
+            <div className=" text-black space-y-3 pt-4 items-center sm:pr-2">
+              <p className="text-sm sm:pr-2 items-center">
                 Feel like exploring the Dominican? Start the day with a hike on
                 one of Playa Moron’s many trails. Weave through the gated
                 community to find secluded sandy coves for swimming and
@@ -102,8 +102,8 @@ const Tab = () => {
                 Each home is fully equipped to meet your needs, with ample space
                 and privacy.
               </p>
-              <ul className="grid grid-cols-2 p-2 mb-3">
-                <li className="flex mb-2">
+              <ul className="grid grid-cols-2 md:p-1 p-2 mb-3 ">
+                <li className=" mb-2">
                   <Image
                     src="/assets/icons/mountain 1.png"
                     alt="mountain view"
@@ -113,7 +113,7 @@ const Tab = () => {
                   />
                   Mountain View
                 </li>
-                <li className="flex mb-3">
+                <li className=" mb-2">
                   <Image
                     src="/assets/icons/chef 1.png"
                     alt="Beach Access"
@@ -123,7 +123,7 @@ const Tab = () => {
                   />{" "}
                   Chef
                 </li>
-                <li className="flex mb-3">
+                <li className=" mb-2">
                   <Image
                     src="/assets/icons/broom 1.png"
                     alt="Cleaning"
@@ -133,7 +133,7 @@ const Tab = () => {
                   />{" "}
                   Cleaning Available on stay
                 </li>
-                <li className="flex mb-3">
+                <li className="pt-2 mb-2">
                   <Image
                     src="/assets/icons/Pool 1.png"
                     alt="Pool"
@@ -143,7 +143,7 @@ const Tab = () => {
                   />{" "}
                   Pool - Infinity
                 </li>
-                <li className="flex mb-3">
+                <li className="pt-2 pb-1">
                   <Image
                     src="/assets/icons/pan 1.png"
                     alt="kitchen"
@@ -153,7 +153,7 @@ const Tab = () => {
                   />{" "}
                   Kitchen
                 </li>
-                <li className="flex mb-3">
+                <li className="mb-2">
                   <Image
                     src="/assets/icons/sunrise 1.png"
                     alt="Shared Beach Access"
@@ -163,7 +163,7 @@ const Tab = () => {
                   />{" "}
                   Shared Beach Access
                 </li>
-                <li className="flex mb-3">
+                <li className="mb-3">
                   <Image
                     src="/assets/icons/bell 1.png"
                     alt="Wifi"
@@ -173,7 +173,7 @@ const Tab = () => {
                   />{" "}
                   Butler
                 </li>
-                <li className="flex mb-3">
+                <li className="mb-3">
                   <Image
                     src="/assets/icons/shaker 1.png"
                     alt="Bartender"
@@ -183,7 +183,7 @@ const Tab = () => {
                   />{" "}
                   Bartender
                 </li>
-                <li className="flex mb-3">
+                <li className=" mb-3">
                   <Image
                     src="/assets/icons/hot-tub 1.png"
                     alt="Hot tub"
@@ -193,7 +193,7 @@ const Tab = () => {
                   />{" "}
                   Hot tub
                 </li>
-                <li className="flex mb-3">
+                <li className="mb-2">
                   <Image
                     src="/assets/icons/wifi 1.png"
                     alt="Wifi"
@@ -208,22 +208,17 @@ const Tab = () => {
           </div>
 
           {/* Reviews Section */}
-          <div ref={sectionRefs.reviews} id="reviews" className="pt-8">
+          <div ref={sectionRefs.reviews} id="reviews" className="pt-4 mx-auto">
             <ReviewSection reviews={myReviewArray} rating={4.76} />
           </div>
 
-          {/* About Host Section */}
+          {/* About Host Section 
           <div ref={sectionRefs.aboutHost} id="about-host" className="pt-8">
-            <h2 className="text-sm font-bold mb-3">About host</h2>
+            <h2 className="text-sm font-bold mb-3">About</h2>
             <div className="text-xs space-y-3">
-              <p>I am pleased to see your client for</p>
-              <p>everything I want to do with the</p>
-              <p>company.</p>
-              <p>I am pleased to see my client for</p>
-              <p>everything I want to do with the</p>
-              <p>company.</p>
+              <p>The host is dedicated to .....</p>
             </div>
-          </div>
+          </div>*/}
         </div>
       </div>
     </div>
