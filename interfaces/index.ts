@@ -42,11 +42,16 @@ export interface PropertyCardProps {
 
 
 export interface PropertyGridProps {
-  data: {
+  data: PropertyProps &  {
     offers: {
       bed: number;
       shower: number;
       occupants: number;
     };
+
   };
+}
+
+export interface PropertySmallScreenProps {
+  property: PropertyProps;
 }

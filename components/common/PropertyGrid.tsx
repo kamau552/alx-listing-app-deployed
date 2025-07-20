@@ -3,6 +3,8 @@ import { PropertyGridProps } from '@/interfaces';
 import Image from 'next/image';
 
 
+
+
 const images = [
     "/assets/Images/image 19.png",
     "/assets/Images/image 21.png",
@@ -11,46 +13,48 @@ const images = [
 ];
 
 
-const PropertyGrid: React.FC<PropertyGridProps> = ({ data }) => {
+const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-auto py-2 mt-2 p-2 md:p-4">
-      {/*Large Image*/}
-      <div className="relative col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 h-[250px] sm:h-[400px] md:h-[500px]">
+    <div className="grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2 gap-4 py-2 mt-2 p-2 md:p-4">
+      {/* Large image */}
+      <div className="relative h-[250px] sm:h-full sm:col-span-2 sm:row-span-2">
         <Image
           src={images[0]}
           alt="Large Property Image"
           fill
-          className="object-cover w-full rounded-lg "
+          className="object-cover rounded-lg"
         />
       </div>
 
-      {/*Medium Images*/}
-      <div className="relative col-span-2 h-[150px] sm:h-[200px] md:h-[250px]  hidden sm:block sm:">
+      {/* Medium image - hidden on small screens */}
+      <div className="hidden sm:block relative sm:col-span-2 sm:row-span-1 sm:h-[200px]">
         <Image
           src={images[1]}
-          alt="Medium Property Image"
+          alt="Image 2"
           fill
-          className="object-cover w-full rounded-lg"
+          className="object-cover rounded-lg"
         />
       </div>
-      {/* small image 1 */}
-      <div className="relative col-span-1 h-[150px] sm:h-[200px] md:h-[250px] hidden sm:block sm:col-span-1 row-span-1">
+
+      {/* Small image 1 - hidden on small screens */}
+      <div className="hidden sm:block relative sm:col-span-1 sm:row-span-1 sm:h-[200px]">
         <Image
           src={images[2]}
-          alt="Medium Property Image"
+          alt="Image 3"
           fill
-          className="object-cover w-full rounded-lg md:h-[300px]"
+          className="object-cover rounded-lg"
         />
       </div>
-      {/* small image 2 */}
-      <div className="relative col-span-1 h-[150px] sm:h-[200px] md:h-[250px] hidden sm:block sm:col-span-1 row-span">
+
+      {/* Small image 2 - hidden on small screens */}
+      <div className="hidden sm:block relative sm:col-span-1 sm:row-span-1 sm:h-[200px]">
         <Image
           src={images[3]}
-          alt="Medium Property Image"
+          alt="Image 4"
           fill
-          className="object-cover w-full rounded-lg"
+          className="object-cover rounded-lg"
         />
-        {/* show more photos button */}
         <span className="absolute bottom-2 left-1/2 -translate-x-1/2">
           <button className="border border-white font-light text-xs text-white px-4 py-1 rounded-full backdrop-blur-sm hover:text-black hover:bg-white transition">
             show all photos
@@ -59,7 +63,7 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ data }) => {
       </div>
 
       {/*Additional Features */}
-      <div className="flex flex-row items-center gap-2 w-full text-xs sm:absolute">
+      <div className="flex flex-row items-center gap-4 w-full text-xs md:mt-0">
         {/* Bed */}
         <div className="flex items-center gap-2 border border-gray-300 px-3 py-1 rounded-full text-center whitespace-nowrap">
           <Image

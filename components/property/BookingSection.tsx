@@ -1,6 +1,16 @@
 import React from 'react'
+import { useRouter } from 'next/router';
+import { useState } from 'react'
 
 const BookingSection: React.FC<{ price: number }> = ({ price }) => {
+  const router = useRouter()
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleReserveClick = () => {
+  setIsLoading(true);
+  router.push('/booking').then(() => setIsLoading(false));
+  };
+
   return (
     <div className="bg-white p-6 pl-6 shadow-md w-full rounded-lg">
       <h3 className="text-xl font-semibold pb-1.5 border-b border-gray-300">
@@ -37,8 +47,14 @@ const BookingSection: React.FC<{ price: number }> = ({ price }) => {
       </div>
 
       {/* Reserve button */}
-      <button className="mt-4 bg-teal-600 text-white text-xs py-2 px-4 w-full rounded-md">
-        Reserve now
+      <button
+        onClick={handleReserveClick}
+        disabled={isLoading}
+        className={`mt-4 bg-teal-600 text-white text-xs py-2 px-4 w-full rounded-md hover:bg-teal-500 ${
+          isLoading ? "opacity-75 cursor-not-allowed" : ""
+        }`}
+      >
+        {isLoading ? "Processing..." : "Reserve now"}
       </button>
     </div>
   );
