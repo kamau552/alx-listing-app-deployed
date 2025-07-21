@@ -5,7 +5,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BookingForm from "@/components/booking/BookingForm";
 import OrderSummary from "@/components/booking/OrderSummary";
-import CancellationPolicy from "@/components/booking/CancellationPolicy";
 import Image from 'next/image';
 
 
@@ -28,7 +27,9 @@ export default function BookingPage() {
         <Link href={isActive ? "" : "/booking"}>
           <span
             className={`pl-14 cursor-pointer px-4 py-2 font-medium  ${
-              isActive ? "underline decoration-solid decoration-teal-600 text-teal-600" : " "
+              isActive
+                ? "underline decoration-solid decoration-teal-600 text-teal-600"
+                : " "
             }`}
             onClick={(e) => {
               if (isActive) {
@@ -50,10 +51,22 @@ export default function BookingPage() {
           </span>
         </Link>
       </div>
-      <div className="grid grid-cols-2 gap-2 p-6">
-        <BookingForm />
-        <OrderSummary bookingDetails={bookingDetails} />
-        <CancellationPolicy />
+      {/*Booking page */}
+      <div className="flex flex-col-reverse lg:flex-row gap-6 w-full">
+        <div className="flex flex-col-reverse p-8 lg:flex-row gap-6 w-full">
+          {/* Booking Form */}
+          <div className="w-full ">
+            <BookingForm />
+          </div>
+
+          {/* Single OrderSummary instance with responsive image */}
+          <div className="mr-3 mt-4">
+            <OrderSummary
+              bookingDetails={bookingDetails}
+              hideImageOnDesktop={true}
+            />
+          </div>
+        </div>
       </div>
       <Footer />
     </div>

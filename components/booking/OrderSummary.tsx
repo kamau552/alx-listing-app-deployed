@@ -4,9 +4,9 @@ import Image from 'next/image';
 const OrderSummary: React.FC<{ bookingDetails: any }> = ({
   bookingDetails,
 }) => (
-  <div className="bg-white p-6 shadow-sm rounded-lg w-full h-[650px]">
+  <div className="bg-white p-6 pr-4 shadow-sm rounded-lg w-full h-[650px] md:items-center">
     <h2 className="text-xl font-semibold">Review Order Details</h2>
-    <div className="flex items-center w-full mt-4">
+    <div className="flex items-center w-full mt-4 pl-2">
       <Image
         src="/assets/Images/image 19.png"
         alt="Property"
@@ -24,7 +24,7 @@ const OrderSummary: React.FC<{ bookingDetails: any }> = ({
       </div>
 
     {/* Price Breakdown */}
-    <div className="mt-6">
+    <div className="mt-6 pl-2 md:">
       <div className="flex justify-between mb-2">
         <p>Booking Fee</p>
         <p>${bookingDetails.bookingFee}</p>

@@ -23,7 +23,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
           src={images[0]}
           alt="Large Property Image"
           fill
-          className="object-cover rounded-lg"
+          className="object-cover rounded-lg p-0"
         />
       </div>
 
@@ -33,7 +33,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
           src={images[1]}
           alt="Image 2"
           fill
-          className="object-cover rounded-lg"
+          className="object-cover rounded-lg p-0"
         />
       </div>
 
@@ -43,7 +43,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
           src={images[2]}
           alt="Image 3"
           fill
-          className="object-cover rounded-lg"
+          className="object-cover rounded-lg pt-0"
         />
       </div>
 
@@ -53,7 +53,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
           src={images[3]}
           alt="Image 4"
           fill
-          className="object-cover rounded-lg"
+          className="object-cover rounded-lg pt-0"
         />
         <span className="absolute bottom-2 left-1/2 -translate-x-1/2">
           <button className="border border-white font-light text-xs text-white px-4 py-1 rounded-full backdrop-blur-sm hover:text-black hover:bg-white transition">

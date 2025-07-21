@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import { useRouter } from "next/router";
 import { PropertyProps } from "@/interfaces/index";
 import Image from "next/image";
 import Footer from "@/components/layout/Footer";
@@ -7,7 +8,10 @@ import Tab from "@/components/common/tab";
 import BookingSection from "@/components/property/BookingSection";
 import React from "react";
 
+
 const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => {
+   const router = useRouter();
+   const isActive = router.pathname === '/';
   return (
     <>
       <Header />
@@ -49,14 +53,20 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
           {/* Return button - visible only on small screens */}
           <div className="flex">
             <span className="flex items-center px-2 py-1 mr-40 sm:hidden">
-              <Image
-                src="/assets/icons/Linear/Arrows/Arrow Left.png"
-                alt="save"
-                width={15}
-                height={15}
-                className="inline-block mr-2"
-              />
-              <p>Return</p>
+              <button
+                onClick={() => router.back()}
+                className="flex items-center px-2 py-1 mr-40 sm:hidden"
+                aria-label="Go back"
+              >
+                <Image
+                  src="/assets/icons/Linear/Arrows/Arrow Left.png"
+                  alt="save"
+                  width={15}
+                  height={15}
+                  className="inline-block mr-2"
+                />
+                <p>Return</p>
+              </button>
             </span>
 
             {/* Save button - with conditional borders */}
