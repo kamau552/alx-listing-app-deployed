@@ -32,7 +32,7 @@ const Tab = () => {
     <div className="w-full px-2 max-w-7xl mx-auto mt-1 sm:mt-0 sm:pr-2">
       <div className="w-full bg-white">
         {/* Tabs */}
-        <div className="flex border-b border-t border-gray-300 text-gray-500 text-sm top-0 bg-white z-10 pt-4 pb-0 gap-1 sm:gap-2 py-0 sm:py-2">
+        <div className="flex border-b border-t border-gray-300 text-gray-500 text-sm top-0 bg-white z-10 pt-4 gap-1 sm:gap-2 sm:py-2">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -49,7 +49,7 @@ const Tab = () => {
         </div>
 
         {/* Content */}
-        <div className="">
+        <div>
           {/* Description Section */}
           <div
             ref={sectionRefs.description}

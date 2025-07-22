@@ -16,14 +16,14 @@ const images = [
 const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2 gap-4 py-2 mt-2 p-2 md:p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2 gap-2 py-2 mt-2 p-2 md:p-4 rounded-2xl">
       {/* Large image */}
       <div className="relative h-[250px] sm:h-full sm:col-span-2 sm:row-span-2">
         <Image
           src={images[0]}
           alt="Large Property Image"
           fill
-          className="object-cover rounded-lg p-0"
+          className="object-cover rounded-2xl sm:rounded-s-2xl sm:rounded-tr-none sm:rounded-br-none"
         />
       </div>
 
@@ -33,7 +33,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
           src={images[1]}
           alt="Image 2"
           fill
-          className="object-cover rounded-lg p-0"
+          className="object-cover rounded-tr-lg p-0"
         />
       </div>
 
@@ -43,7 +43,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
           src={images[2]}
           alt="Image 3"
           fill
-          className="object-cover rounded-lg pt-0"
+          className="object-cover  pt-0"
         />
       </div>
 
@@ -53,7 +53,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
           src={images[3]}
           alt="Image 4"
           fill
-          className="object-cover rounded-lg pt-0"
+          className="object-cover rounded-br-lg pt-0"
         />
         <span className="absolute bottom-2 left-1/2 -translate-x-1/2">
           <button className="border border-white font-light text-xs text-white px-4 py-1 rounded-full backdrop-blur-sm hover:text-black hover:bg-white transition">

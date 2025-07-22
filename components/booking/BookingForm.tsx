@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import CancellationPolicy from './CancellationPolicy';
-import CustomCheckbox from '@/components/common/CustomCheckbox'; // Make sure this component exists
+import CustomCheckbox from '@/components/common/CustomCheckbox'; 
+import ThankYouModal from "@/components/common/ThankYouModal";
 
 const BookingForm = () => {
   const [selectedCard, setSelectedCard] = useState('');
 
   const handleCardChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCard(e.target.value);
+  };
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleConfirmAndPay = () => {
+    // Perform booking logic...
+    setShowModal(true); // Show modal on success
   };
 
   return (
@@ -195,9 +203,19 @@ const BookingForm = () => {
         </div>
 
         <div className="pt-8">
-          <button className="mt-6 bg-teal-600 text-white py-2 px-4 rounded-lg w-full sm:w-60 font-bold">
+          <button
+            onClick={handleConfirmAndPay}
+            className="mt-6 bg-teal-600 text-white py-2 px-4 rounded-lg w-full sm:w-60 font-bold"
+          >
             Confirm & Pay
           </button>
+
+          {/* Thank You Modal */}
+          <ThankYouModal
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            bookingDate={"July 25, 2025"} // Example
+          />
         </div>
       </form>
     </div>

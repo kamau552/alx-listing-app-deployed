@@ -8,20 +8,30 @@ import Pill from '@/components/common/Pill';
 function Hero() {
   return (
     <>
-      <div className="relative sm:hidden bg-white">
+      {/* Mobile filters appear above hero */}
+      <div className="md:hidden mb-6">
         <Pill />
       </div>
-      <div className="relative mx-auto my-0 ml-6 mr-6 pl-5 pr-5">
-        <Image
-          src="/assets/Images/image 1.png"
-          alt="Hero Image"
-          width={1920}
-          height={1080}
-          className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover overflow-hidden rounded-2xl"
-        />
+
+      {/* Hero Image */}
+      <div className="px-12 sm:px-6 md:px-8">
+        <div className="relative w-full h-[200px] sm:h-[450px] md:h-[400px] rounded-2xl overflow-hidden">
+          <Image
+            src="/assets/Images/image 1.png"
+            alt="Hero Image"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Desktop filters appear below hero */}
+      <div className="hidden md:block">
+        <Pill />
       </div>
     </>
-  )
+  );
 }
 
 export default Hero;

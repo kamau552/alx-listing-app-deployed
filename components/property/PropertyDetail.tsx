@@ -22,55 +22,37 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
         </h1>
 
         {/* Rating and Location */}
-        <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm md:text-base mb-4">
-          <span className="text-black hidden sm:block">
-            ⭐ {property.rating} (376 reviews)
-          </span>
-
-          <span className="text-black items-center hidden sm:block">
-            <Image
-              src="/assets/icons/Bold/Map & Location/Map Point.png"
-              alt="Location"
-              width={16}
-              height={16}
-              className="inline-block mr-1"
-            />
-            {property.address.city}, {property.address.country}
-          </span>
-
-          <span className="text-black items-center mr-40 sm:mr-20 hidden sm:block">
-            <Image
-              src="/assets/icons/profile 1.png"
-              alt="Host"
-              width={16}
-              height={16}
-              className="inline-block ml-2 mr-1"
-            />
-            Mainstream
-          </span>
-
-          {/* Save and Share */}
-          {/* Return button - visible only on small screens */}
-          <div className="flex">
-            <span className="flex items-center px-2 py-1 mr-40 sm:hidden">
-              <button
-                onClick={() => router.back()}
-                className="flex items-center px-2 py-1 mr-40 sm:hidden"
-                aria-label="Go back"
-              >
-                <Image
-                  src="/assets/icons/Linear/Arrows/Arrow Left.png"
-                  alt="save"
-                  width={15}
-                  height={15}
-                  className="inline-block mr-2"
-                />
-                <p>Return</p>
-              </button>
+        <div className="hidden sm:flex flex-wrap items-center justify-between gap-2 text-sm mb-4">
+          <div className="flex items-center gap-4 flex-wrap">
+            <span className="text-black">
+              ⭐ {property.rating} (376 reviews)
             </span>
 
-            {/* Save button - with conditional borders */}
-            <span className="flex items-center px-2 py-1 mr-1 sm:border sm:border-gray-300 sm:rounded-full sm:ml-40">
+            <span className="text-black flex items-center">
+              <Image
+                src="/assets/icons/Bold/Map & Location/Map Point.png"
+                alt="Location"
+                width={16}
+                height={16}
+                className="inline-block mr-1"
+              />
+              {property.address.city}, {property.address.country}
+            </span>
+
+            <span className="text-black flex items-center">
+              <Image
+                src="/assets/icons/profile 1.png"
+                alt="Host"
+                width={16}
+                height={16}
+                className="inline-block ml-2 mr-1"
+              />
+              Mainstream
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="flex items-center px-2 py-1 border border-gray-300 rounded-full">
               <Image
                 src="/assets/icons/Fav.png"
                 alt="save"
@@ -78,20 +60,53 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
                 height={15}
                 className="inline-block mr-2"
               />
-              <p className="hidden sm:block">Save</p>
+              <p>Save</p>
             </span>
 
-            {/* Share button - with conditional borders */}
-            <span className="flex items-center px-2 py-1 sm:border sm:border-gray-300 sm:rounded-full">
+            <span className="flex items-center px-2 py-1 border border-gray-300 rounded-full">
               <Image
                 src="/assets/icons/Share.png"
                 alt="share"
                 width={13}
                 height={13}
-                className="inline-block mr-1 m-2"
+                className="inline-block mr-2"
               />
-              <p className="hidden sm:block">Share</p>
+              <p>Share</p>
             </span>
+          </div>
+        </div>
+
+        {/* Mobile view */}
+        <div className="flex sm:hidden items-center justify-between mb-4">
+          <button
+            onClick={() => router.back()}
+            className="flex items-center px-2 py-1"
+            aria-label="Go back"
+          >
+            <Image
+              src="/assets/icons/Linear/Arrows/Arrow Left.png"
+              alt="Return"
+              width={15}
+              height={15}
+              className="inline-block mr-2"
+            />
+            <p>Return</p>
+          </button>
+
+          <div className="flex items-center gap-2 pr-4">
+            <Image
+              src="/assets/icons/Fav.png"
+              alt="save"
+              width={15}
+              height={15}
+              className="mr-6"
+            />
+            <Image
+              src="/assets/icons/Share.png"
+              alt="share"
+              width={13}
+              height={13}
+            />
           </div>
         </div>
 
