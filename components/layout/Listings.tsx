@@ -1,4 +1,5 @@
 import { PROPERTYLISTINGSAMPLE } from "@/constants";
+import Link from "next/link";
 import PropertyCard from "@/components/common/PropertyCard";
 
 export default function ListingsPage() {
@@ -13,7 +14,9 @@ export default function ListingsPage() {
                 60% Off
               </div>
             )}
-            <PropertyCard data={property} />
+            <Link href={`/property/${property.id}`}>
+              <PropertyCard data={property} index={index} />
+            </Link>
           </div>
         ))}
       </div>
@@ -24,9 +27,9 @@ export default function ListingsPage() {
           <div className="flex items-center justify-center rounded-full bg-gray-900 text-white text-sm h-10 px-5 cursor-pointer">
             Show more
           </div>
-          <a href="#" className="mt-1.5 text-sm text-gray-700">
+          <Link href="#" className="mt-1.5 text-sm text-gray-700">
             Click to see more listings
-          </a>
+          </Link>
         </div>
       </div>
     </div>

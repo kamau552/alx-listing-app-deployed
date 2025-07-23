@@ -1,7 +1,9 @@
 import React from 'react'
 import Image from 'next/image';
 
-const OrderSummary: React.FC<{ bookingDetails: any }> = ({
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const OrderSummary: React.FC<{ bookingDetails: any, hideImageOnDesktop?: boolean; }> = ({
   bookingDetails,
 }) => (
   <div className="bg-white p-6 pr-4 shadow-sm rounded-lg w-full h-[650px] md:items-center">

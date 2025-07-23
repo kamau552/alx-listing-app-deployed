@@ -1,49 +1,107 @@
-import React from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 import Image from 'next/image';
-import { myReviewArray } from '@/constants';
+import { Review } from "@/interfaces";
 
 interface ReviewSectionProps {
-  reviews?: any[];
-  rating: number;
+  propertyId: string;
 }
 
+const ReviewSection: React.FC<ReviewSectionProps> = ({ propertyId }) => {
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [averageRating, setAverageRating] = useState(0);
 
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await axios.get(`/api/properties/${propertyId}/reviews`);
+        
+        setReviews(response.data.reviews || []);
+        
+        // Calculate average rating if not provided by API
+        const avg = response.data.averageRating || 
+                   (response.data.reviews?.reduce((sum: number, review: Review) => sum + review.rating, 0) / 
+                   (response.data.reviews?.length || 1));
+        setAverageRating(parseFloat(avg.toFixed(1)));
+      } catch (err) {
+        console.error("Error fetching reviews:", err);
+        setError("Failed to load reviews. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-const ReviewSection: React.FC<ReviewSectionProps> = ({
-  reviews = [],
-  rating,
-}) => {
+    if (propertyId) {
+      fetchReviews();
+    }
+  }, [propertyId]);
+
+  if (loading) {
+    return (
+      <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+        <h3 className="text-sm font-semibold col-span-2 mb-1">
+          ⭐ Loading reviews...
+        </h3>
+        <div className="col-span-2 text-center py-4">Loading...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+        <h3 className="text-sm font-semibold col-span-2 mb-1">
+          ⭐ {averageRating} ({reviews.length} reviews)
+        </h3>
+        <div className="col-span-2 text-red-500 text-sm">{error}</div>
+      </div>
+    );
+  }
+
   return (
-    <div className="grid grid-cols-2 gap-x-6 gap-y-3"> {/* Reduced vertical gap */}
-      <h3 className="text-sm font-semibold col-span-2 mb-1"> {/* Smaller text and margin */}
-        ⭐ {rating} ({reviews.length} reviews)
+    <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+      <h3 className="text-sm font-semibold col-span-2 mb-1">
+        ⭐ {averageRating} ({reviews.length} reviews)
       </h3>
-      {reviews.map((review, index) => (
-        <div key={index} className="text-xs pr-4"> {/* Added right padding */}
-          <div className="flex items-start gap-1.5"> {/* Tighter gap */}
-            <Image
-              src={review.avatar}
-              alt={review.name}
-              width={28} 
-              height={28}
-              className="rounded-full"
-            />
-            <div>
-              <p className="font-bold leading-none">{review.name}</p> {/* Tighter line */}
-              <p className="text-gray-500 text-[0.65rem] leading-none mt-2"> {/* Smaller text */}
-                {review.work}
-              </p>
+      
+      {reviews.length > 0 ? (
+        reviews.map((review) => (
+          <div key={review.id} className="text-xs pr-4">
+            <div className="flex items-start gap-1.5">
+              <Image
+                src={review.avatar || '/default-avatar.png'}
+                alt={review.name}
+                width={28}
+                height={28}
+                className="rounded-full"
+              />
+              <div>
+                <p className="font-bold leading-none">{review.name}</p>
+                {review.work && (
+                  <p className="text-gray-500 text-[0.65rem] leading-none mt-2">
+                    {review.work}
+                  </p>
+                )}
+              </div>
             </div>
+            <div className="mt-0.5 text-gray-500 text-xs">
+              {review.date}
+              {review.place && <span className="ml-1">{review.place}</span>}
+            </div>
+            <p className="mt-1 text-black text-sm leading-snug">
+              {review.comment}
+            </p>
           </div>
-          <div className="mt-0.5 text-gray-500 text-xs"> {/* Smaller margin */}
-            {review.date}
-            {review.place && <span className="ml-1">{review.place}</span>}
-          </div>
-          <p className="mt-1 text-black text-sm leading-snug"> {/* Compact text */}
-            {review.comment}
-          </p>
+        ))
+      ) : (
+        <div className="col-span-2 text-gray-500 text-sm">
+          No reviews yet. Be the first to review!
         </div>
-      ))}
+      )}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import "@/styles/globals.css";
+import Link from 'next/link';
 
 const Nav = () => {
   const navItems = [
@@ -31,7 +32,7 @@ const Nav = () => {
               key={name}
               className={`flex-shrink-0 sm:pr-2 md:pr-1.5 ${index >= 6 ? 'hidden md:flex' : 'flex'}`}
             >
-              <a
+              <Link
                 href="#"
                 className="flex flex-col items-center min-w-[60px]"
                 style={{
@@ -50,7 +51,7 @@ const Nav = () => {
                   />
                 </div>
                 <span className="text-xs mt-1 whitespace-nowrap">{name}</span>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

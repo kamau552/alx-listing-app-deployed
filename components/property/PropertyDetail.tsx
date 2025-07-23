@@ -152,7 +152,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
         <div className="flex flex-col lg:flex-row gap-6 mt-2 sm:mt-0">
           {/* Tabs Content */}
           <div className="w-full lg:w-2/3">
-            <Tab />
+            <Tab property={property}/>
           </div>
 
           {/* Sticky Booking Card */}

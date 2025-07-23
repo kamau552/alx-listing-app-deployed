@@ -2,8 +2,13 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image'
 import ReviewSection from '../property/ReviewSection';
 import { myReviewArray } from '@/constants';
+import { PropertyProps } from '@/interfaces';
 
-const Tab = () => {
+interface TabProps {
+  property: PropertyProps;
+}
+
+const Tab: React.FC<TabProps> = ({ property }) => {
   const [activeTab, setActiveTab] = useState('tab1');
   const sectionRefs = {
     description: useRef<HTMLDivElement>(null),

@@ -1,3 +1,4 @@
+
 export interface PillProps {
   title: string;
   styles?: string;
@@ -15,6 +16,7 @@ export interface Offers {
 }
 
 export interface PropertyProps {
+  id: string;
   name: string;
   address: {
     state: string;
@@ -38,6 +40,7 @@ export interface PropertyProps {
 
 export interface PropertyCardProps {
   data: PropertyProps;
+  index: number;
 }
 
 
@@ -54,4 +57,30 @@ export interface PropertyGridProps {
 
 export interface PropertySmallScreenProps {
   property: PropertyProps;
+}
+
+export interface SearchProps {
+  mobile?: boolean;  // Add this line
+  // ... other props you already have
+}
+export interface Review {
+  id: string;
+  name: string;
+  avatar: string;
+  work?: string;
+  date: string;
+  place?: string;
+  comment: string;
+  rating: number;
+}
+
+export interface OrderSummaryProps {
+  bookingDetails: {
+    propertyName: string;
+    price: number;
+    bookingFee: number;
+    totalNights: number;
+    startDate: string;
+  };
+  hideImageOnDesktop?: boolean; 
 }

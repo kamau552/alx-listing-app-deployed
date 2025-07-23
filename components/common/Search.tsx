@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import Header from "@/components/layout/Header";
+
 
 interface SearchProps {
   placeholder?: string;
   onSearch?: (query: string) => void;
+   mobile?: boolean;
 }
 
 const Search: React.FC<SearchProps> = ({ placeholder, onSearch }) => {

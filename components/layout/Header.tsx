@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { AuthButtons } from "../common/Button";
 import Search from "../common/Search";
+import Link from "next/link";
 
 const Header = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -20,6 +21,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
+            <Link href="/" className="cursor-pointer">
             <Image
               src="/assets/Logos/alxlogo.png"
               alt="Logo"
@@ -27,6 +29,7 @@ const Header = () => {
               height={60}
               className="h-8 md:h-5  w-auto sm:h-4"
             />
+            </Link>
           </div>
 
           {/* Search bar - hidden on mobile */}
@@ -71,7 +74,7 @@ const Header = () => {
             <AuthButtons />
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile profile button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
@@ -79,7 +82,7 @@ const Header = () => {
               aria-label="Profile menu"
             >
               <Image
-                src="/assets/icons/profile 1.png"
+                src="/assets/icons/profile 2.png"
                 alt="Profile"
                 width={40}
                 height={40}
@@ -89,8 +92,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile search expanded view - appears when search is clicked */}
-        {/* You'll need to implement this toggle functionality */}
 
         {/* Mobile profile dropdown */}
         {isProfileOpen && (
