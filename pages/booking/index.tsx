@@ -9,8 +9,6 @@ import Image from 'next/image';
 
 export default function BookingPage() {
   const router = useRouter();
-
-  // ✅ Fix hydration error by detecting client-side render
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {

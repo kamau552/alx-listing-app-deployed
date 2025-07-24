@@ -15,7 +15,9 @@ export default function ListingsPage() {
               </div>
             )}
             <Link href={`/property/${property.id}`}>
-              <PropertyCard data={property} index={index} />
+              <div>
+                <PropertyCard data={property} index={index} />
+              </div>
             </Link>
           </div>
         ))}

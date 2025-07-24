@@ -23,6 +23,7 @@ const FilterPills = () => {
     "Self CheckIn",
     "Instant Book"
   ];
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const mainFilters = filters.filter(f => !dropdownFilters.includes(f) && f !== "Filter");
 
   return (

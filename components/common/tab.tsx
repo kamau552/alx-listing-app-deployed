@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image'
 import ReviewSection from '../property/ReviewSection';
-import { myReviewArray } from '@/constants';
 import { PropertyProps } from '@/interfaces';
 
 interface TabProps {
@@ -17,7 +16,7 @@ const Tab: React.FC<TabProps> = ({ property }) => {
     aboutHost: useRef<HTMLDivElement>(null),
   };
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -28,7 +27,7 @@ const Tab: React.FC<TabProps> = ({ property }) => {
     { id: 'tab4', name: 'About', ref: sectionRefs.aboutHost },
   ];
 
-  const handleTabClick = (tabId: string, ref: React.RefObject<HTMLDivElement>) => {
+  const handleTabClick = (tabId: string, ref: React.RefObject<HTMLDivElement | null>) => {
     setActiveTab(tabId);
     setTimeout(() => scrollToSection(ref), 100); // Small delay to ensure DOM update
   };
@@ -214,7 +213,7 @@ const Tab: React.FC<TabProps> = ({ property }) => {
 
           {/* Reviews Section */}
           <div ref={sectionRefs.reviews} id="reviews" className="pt-4 mx-auto">
-            <ReviewSection reviews={myReviewArray} rating={4.76} />
+            <ReviewSection propertyId={property.id} />
           </div>
 
           {/* About Host Section 

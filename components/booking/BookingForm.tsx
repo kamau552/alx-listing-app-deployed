@@ -55,7 +55,7 @@ const BookingForm = () => {
   };
 
   return (
-    <div className="bg-white p-4 sm:p-6">
+    <div className="bg-white p-4 sm:p-6 ">
       <h2 className="text-md sm:text-xl font-bold">Contact Detail</h2>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -119,7 +119,7 @@ const BookingForm = () => {
             <input
               type="text"
               disabled
-              placeholder="Select payment method below"
+              placeholder=""
               className="mb-1 border border-gray-300 p-2 w-full mt-2 rounded-lg"
             />
             <div className="absolute left-3 top-1/2 transform -translate-y-1/2 flex items-center">

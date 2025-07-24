@@ -1,43 +1,39 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import Image from 'next/image';
-import { Review } from "@/interfaces";
+import { myReviewArray } from '@/constants';
 
 interface ReviewSectionProps {
   propertyId: string;
 }
 
 const ReviewSection: React.FC<ReviewSectionProps> = ({ propertyId }) => {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [loading, setLoading] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [reviews, setReviews] = useState(myReviewArray);
+  const [loading, setLoading] = useState(false); // Set to false since we're using local data
   const [error, setError] = useState<string | null>(null);
   const [averageRating, setAverageRating] = useState(0);
 
   useEffect(() => {
-    const fetchReviews = async () => {
+    // Simulate loading if needed
+    setLoading(true);
+    
+    // Small delay to mimic API fetch
+    const timer = setTimeout(() => {
       try {
-        setLoading(true);
-        setError(null);
-        const response = await axios.get(`/api/properties/${propertyId}/reviews`);
-        
-        setReviews(response.data.reviews || []);
-        
-        // Calculate average rating if not provided by API
-        const avg = response.data.averageRating || 
-                   (response.data.reviews?.reduce((sum: number, review: Review) => sum + review.rating, 0) / 
-                   (response.data.reviews?.length || 1));
+        // Calculate average rating
+        const avg = myReviewArray.reduce((sum, review) => sum + review.rating, 0) / 
+                   myReviewArray.length;
         setAverageRating(parseFloat(avg.toFixed(1)));
+        
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
-        console.error("Error fetching reviews:", err);
-        setError("Failed to load reviews. Please try again later.");
+        setError("Error displaying reviews");
       } finally {
         setLoading(false);
       }
-    };
+    }, 300); // Small delay for realism
 
-    if (propertyId) {
-      fetchReviews();
-    }
+    return () => clearTimeout(timer);
   }, [propertyId]);
 
   if (loading) {
@@ -69,11 +65,11 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ propertyId }) => {
       </h3>
       
       {reviews.length > 0 ? (
-        reviews.map((review) => (
-          <div key={review.id} className="text-xs pr-4">
+        reviews.map((review, index) => (
+          <div key={index} className="text-xs pr-4">
             <div className="flex items-start gap-1.5">
               <Image
-                src={review.avatar || '/default-avatar.png'}
+                src={review.avatar}
                 alt={review.name}
                 width={28}
                 height={28}
@@ -81,11 +77,9 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ propertyId }) => {
               />
               <div>
                 <p className="font-bold leading-none">{review.name}</p>
-                {review.work && (
-                  <p className="text-gray-500 text-[0.65rem] leading-none mt-2">
-                    {review.work}
-                  </p>
-                )}
+                <p className="text-gray-500 text-[0.65rem] leading-none mt-2">
+                  {review.work}
+                </p>
               </div>
             </div>
             <div className="mt-0.5 text-gray-500 text-xs">

@@ -72,7 +72,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
             width={14}
             height={14}
           />
-          <span className="mr-2.5">{data.offers.bed} bedrooms</span>
+          <span className="mr-2.5">{Number(data.offers.bed)} bedrooms</span>
         </div>
 
         {/* Shower */}
@@ -83,7 +83,7 @@ const PropertyGrid: React.FC<PropertyGridProps > = ({ data }) => {
             width={14}
             height={14}
           />
-          <span className="mr-2.5">{data.offers.shower} bathroom</span>
+          <span className="mr-2.5">{Number(data.offers.shower)} bathroom</span>
         </div>
 
         {/* Guests */}

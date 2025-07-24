@@ -14,12 +14,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Luxury Villa", "Pool", "Free Parking"],
     price: 3200,
     offers: {
-      bed: "3",
-      shower: "3",
+      bed: 3,
+      shower: 3,
       occupants: "4-6",
     },
     image: "/assets/Images/List 1.png",
     discount: 0,
+    id: "0"
   },
   {
     name: "Mountain Escape Chalet",
@@ -33,12 +34,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Mountain View", "Fireplace", "Self Checkin"],
     price: 1800,
     offers: {
-      bed: "4",
-      shower: "2",
+      bed: 4,
+      shower: 2,
       occupants: "5-7",
     },
     image: "/assets/Images/image 3.png",
     discount: 0,
+    id: "1"
   },
 
   {
@@ -53,12 +55,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Desert View", "Pet Friendly", "Self Checkin"],
     price: 1500,
     offers: {
-      bed: "2",
-      shower: "1",
+      bed: 2,
+      shower: 1,
       occupants: "2-3",
     },
     image: "/assets/Images/image 6.png",
     discount: 0,
+    id: "2"
   },
 
   {
@@ -73,12 +76,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["City View", "Free WiFi", "24h Checkin"],
     price: 4500,
     offers: {
-      bed: "2",
-      shower: "2",
+      bed: 2,
+      shower: 2,
       occupants: "2-4",
     },
     image: "/assets/Images/image 7.png",
     discount: 15,
+    id: "3"
   },
 
   {
@@ -93,12 +97,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Riverside", "Private Dock", "Free Kayaks"],
     price: 2800,
     offers: {
-      bed: "3",
-      shower: "2",
+      bed: 3,
+      shower: 2,
       occupants: "4-6",
     },
     image: "/assets/Images/image 22.png",
     discount: 20,
+    id: "4"
   },
 
   {
@@ -113,12 +118,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Beachfront", "Private Pool", "Chef Service"],
     price: 5000,
     offers: {
-      bed: "5",
-      shower: "4",
+      bed: 5,
+      shower: 4,
       occupants: "8-10",
     },
     image: "/assets/Images/image 9.png",
     discount: 0,
+    id: "5"
   },
 
   {
@@ -133,12 +139,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Lakeside", "Mountain View", "Hiking Trails"],
     price: 2300,
     offers: {
-      bed: "3",
-      shower: "3",
+      bed: 3,
+      shower: 3,
       occupants: "4-5",
     },
     image: "/assets/Images/image 12.png",
     discount: 10,
+    id: "6"
   },
 
   {
@@ -153,12 +160,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Garden", "Free Parking", "Self Checkin"],
     price: 2750,
     offers: {
-      bed: "3",
-      shower: "3",
+      bed: 3,
+      shower: 3,
       occupants: "5-6",
     },
     image: "/assets/Images/image 17.png",
     discount: 25,
+    id: "7"
   },
 
   {
@@ -173,12 +181,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["City Center", "Free WiFi", "24h Checkin"],
     price: 2000,
     offers: {
-      bed: "2",
-      shower: "1",
+      bed: 2,
+      shower: 1,
       occupants: "2-3",
     },
     image: "/assets/Images/image 18.png",
     discount: 0,
+    id: "8"
   },
 
   {
@@ -193,12 +202,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Secluded", "Hot Tub", "Self Checkin"],
     price: 2600,
     offers: {
-      bed: "4",
-      shower: "2",
+      bed: 4,
+      shower: 2,
       occupants: "5-7",
     },
     image: "/assets/Images/image 3.png",
     discount: 40,
+    id: "9"
   },
 
   {
@@ -213,12 +223,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Cliffside", "Infinity Pool", "Sea View"],
     price: 6000,
     offers: {
-      bed: "4",
-      shower: "4",
+      bed: 4,
+      shower: 4,
       occupants: "6-8",
     },
     image: "/assets/Images/List 12.png",
     discount: 50,
+    id: "10"
   },
 
   {
@@ -233,12 +244,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Beachfront", "Pet Friendly", "Free Parking"],
     price: 3400,
     offers: {
-      bed: "3",
-      shower: "3",
+      bed: 3,
+      shower: 3,
       occupants: "4-6",
     },
     image: "/assets/Images/image 24.png",
     discount: 0,
+    id: "11"
   },
 
   {
@@ -253,12 +265,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Historical", "Free Breakfast", "Self Checkin"],
     price: 2700,
     offers: {
-      bed: "2",
-      shower: "2",
+      bed: 2,
+      shower: 2,
       occupants: "2-4",
     },
     image: "/assets/Images/List 14.png",
     discount: 35,
+    id: "12"
   },
 
   {
@@ -273,12 +286,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["City Center", "Free WiFi", "Public Transport"],
     price: 2200,
     offers: {
-      bed: "1",
-      shower: "1",
+      bed: 1,
+      shower: 1,
       occupants: "2",
     },
     image: "/assets/Images/List 13.png",
     discount: 0,
+    id: "13"
   },
 
   {
@@ -293,12 +307,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Safari", "Guided Tours", "Free Breakfast"],
     price: 4500,
     offers: {
-      bed: "4",
-      shower: "4",
+      bed: 4,
+      shower: 4,
       occupants: "6-8",
     },
     image: "/assets/Images/List 4.png",
     discount: 20,
+    id: "14"
   },
 
   {
@@ -313,12 +328,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Countryside", "Fireplace", "Self Checkin"],
     price: 1800,
     offers: {
-      bed: "2",
-      shower: "1",
+      bed: 2,
+      shower: 1,
       occupants: "2-4",
     },
     image: "/assets/Images/List 10.png",
     discount: 25,
+    id: "15"
   },
 
   {
@@ -333,12 +349,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Riverfront", "Private Garden", "Self Checkin"],
     price: 5000,
     offers: {
-      bed: "4",
-      shower: "3",
+      bed: 4,
+      shower: 3,
       occupants: "6-8",
     },
     image: "/assets/Images/image 17.png",
     discount: 30,
+    id: "16"
   },
 
   {
@@ -353,12 +370,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Mountain View", "Ski Access", "Fireplace"],
     price: 3900,
     offers: {
-      bed: "3",
-      shower: "3",
+      bed: 3,
+      shower: 3,
       occupants: "4-5",
     },
     image: "/assets/Images/image 18.png",
     discount: 0,
+    id: "17"
   },
 
   {
@@ -373,12 +391,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Beachfront", "Private Pool", "Chef Service"],
     price: 6500,
     offers: {
-      bed: "5",
-      shower: "5",
+      bed: 5,
+      shower: 5,
       occupants: "8-10",
     },
     image: "/assets/Images/image 21.png",
     discount: 60,
+    id: "18"
   },
   {
     name: "Clifftop Retreat",
@@ -392,12 +411,13 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     category: ["Ocean View", "Private Pool", "Self Checkin"],
     price: 4100,
     offers: {
-      bed: "3",
-      shower: "3",
+      bed: 3,
+      shower: 3,
       occupants: "4-5",
     },
     image: "/assets/Images/image 4.png",
     discount: 0,
+    id: "19"
   },
 ];
 

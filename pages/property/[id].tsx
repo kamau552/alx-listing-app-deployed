@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import dynamic from "next/dynamic";
 
-// Lazy load to avoid hydration mismatch
+// purpose is to Lazy load to avoid hydration mismatch
 const PropertyDetail = dynamic(() => import("@/components/property/PropertyDetail"), { ssr: false });
 
 export default function PropertyDetailPage() {
@@ -17,7 +17,7 @@ export default function PropertyDetailPage() {
 
     const fetchProperty = async () => {
       try {
-        const response = await axios.get(`/api/properties/${id}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/properties/${id}`);
         setProperty(response.data);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {

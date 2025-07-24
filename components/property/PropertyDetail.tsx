@@ -11,7 +11,17 @@ import React from "react";
 
 const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => {
    const router = useRouter();
+   // eslint-disable-next-line @typescript-eslint/no-unused-vars
    const isActive = router.pathname === '/';
+  const cleanedProperty = {
+    ...property,
+    offers: {
+      bed: Number(property.offers.bed),
+      shower: Number(property.offers.shower),
+      occupants:(property.offers.occupants),
+    },
+  };
+
   return (
     <>
       <Header />
@@ -111,7 +121,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
         </div>
 
         {/* Property Image Grid */}
-        <PropertyGrid data={property} />
+        <PropertyGrid data={cleanedProperty} />
 
         {/*Rating location on small screens */}
         <div className="container mx-auto px-4 sm:px-6 py-6 overflow-x-hidden text-sm block lg:hidden md:hidden">

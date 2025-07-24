@@ -1,4 +1,9 @@
-
+export interface CardProps {
+  title: string;
+  description?: string;
+  imageUrl?: string;
+  children?: React.ReactNode;
+}
 export interface PillProps {
   title: string;
   styles?: string;
@@ -10,8 +15,8 @@ export interface Address {
 }
 
 export interface Offers {
-  bed: string;
-  shower: string;
+  bed: number;
+  shower: number;
   occupants: string;
 }
 
@@ -26,11 +31,7 @@ export interface PropertyProps {
   rating: number;
   category: string[];
   price: number;
-  offers: {
-    bed: string;
-    shower: string;
-    occupants: string;
-  };
+  offers:  Offers;
   image: string;
   discount: number;
   description: string;
@@ -49,7 +50,7 @@ export interface PropertyGridProps {
     offers: {
       bed: number;
       shower: number;
-      occupants: number;
+      occupants: string;
     };
 
   };
@@ -60,8 +61,7 @@ export interface PropertySmallScreenProps {
 }
 
 export interface SearchProps {
-  mobile?: boolean;  // Add this line
-  // ... other props you already have
+  mobile?: boolean; 
 }
 export interface Review {
   id: string;
@@ -71,6 +71,11 @@ export interface Review {
   date: string;
   place?: string;
   comment: string;
+  rating: number;
+}
+
+export interface ReviewSectionProps {
+  reviews: Review[];
   rating: number;
 }
 
