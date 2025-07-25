@@ -2,9 +2,9 @@ import { PropertyCardProps } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function PropertyCard({ data, index }: PropertyCardProps) {
+export default function PropertyCard({ data, property }: PropertyCardProps) {
   return (
-    <Link href={`/property/${index}`} className="w-full">
+    <Link href={`/property/${property.id}`} className="w-full">
       <div className="flex flex-col bg-white rounded-xl shadow-md overflow-hidden h-full">
         {/* Image with margin inside the card */}
         <div className="p-4 pb-0">

@@ -7,7 +7,7 @@ export default function ListingsPage() {
     <div className="pl-10 pr-10 mt-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 cursor-pointer">
         {PROPERTYLISTINGSAMPLE.map((property, index) => (
-          <div key={index} className="relative">
+          <div key={property.id} className="relative">
             {/* Show badge only on the first property */}
             {index === 0 && (
               <div className="absolute top-2 left-2 bg-teal-500 text-white text-xs px-2 py-1 rounded-md z-20">
@@ -16,7 +16,7 @@ export default function ListingsPage() {
             )}
             <Link href={`/property/${property.id}`}>
               <div>
-                <PropertyCard data={property} index={index} />
+                <PropertyCard data={property} property={property}/>
               </div>
             </Link>
           </div>

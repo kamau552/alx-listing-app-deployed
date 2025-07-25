@@ -41,7 +41,7 @@ export interface PropertyProps {
 
 export interface PropertyCardProps {
   data: PropertyProps;
-  index: number;
+  property: PropertyProps;
 }
 
 

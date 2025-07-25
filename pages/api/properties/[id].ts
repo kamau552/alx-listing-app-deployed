@@ -12,7 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     // 🔥 SEARCH BY `id` FIELD, NOT INDEX
-     const property = PROPERTYLISTINGSAMPLE.find((p) => p.id === propertyId);;
+     const property = PROPERTYLISTINGSAMPLE.find((p) => p.id === propertyId);
 
     if (!property) {
       return res.status(404).json({ error: "Property not found" });

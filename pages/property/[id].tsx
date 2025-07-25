@@ -13,22 +13,25 @@ export default function PropertyDetailPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!id) return;
+  if (!id) return;
 
-    const fetchProperty = async () => {
-      try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/properties/${id}`);
-        setProperty(response.data);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (error: any) {
-        console.error("Error fetching property details:", error.response?.data || error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  console.log("Fetched ID from router:", id); // ✅ Check if id is correct
 
-    fetchProperty();
-  }, [id]);
+  const fetchProperty = async () => {
+    try {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/properties/${id}`);
+      console.log("Fetched Property:", response.data);
+      setProperty(response.data);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+      console.error("Error fetching property details:", error.response?.data || error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchProperty();
+}, [id]);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
   if (!property) return <div className="min-h-screen flex items-center justify-center">Property not found.</div>;

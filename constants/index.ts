@@ -20,7 +20,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/List 1.png",
     discount: 0,
-    id: "0"
+    id: "1"
   },
   {
     name: "Mountain Escape Chalet",
@@ -40,7 +40,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 3.png",
     discount: 0,
-    id: "1"
+    id: "2"
   },
 
   {
@@ -61,7 +61,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 6.png",
     discount: 0,
-    id: "2"
+    id: "3"
   },
 
   {
@@ -82,7 +82,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 7.png",
     discount: 15,
-    id: "3"
+    id: "4"
   },
 
   {
@@ -103,7 +103,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 22.png",
     discount: 20,
-    id: "4"
+    id: "5"
   },
 
   {
@@ -124,7 +124,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 9.png",
     discount: 0,
-    id: "5"
+    id: "6"
   },
 
   {
@@ -145,7 +145,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 12.png",
     discount: 10,
-    id: "6"
+    id: "7"
   },
 
   {
@@ -166,7 +166,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 17.png",
     discount: 25,
-    id: "7"
+    id: "8"
   },
 
   {
@@ -187,7 +187,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 18.png",
     discount: 0,
-    id: "8"
+    id: "9"
   },
 
   {
@@ -208,7 +208,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 3.png",
     discount: 40,
-    id: "9"
+    id: "10"
   },
 
   {
@@ -229,7 +229,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/List 12.png",
     discount: 50,
-    id: "10"
+    id: "11"
   },
 
   {
@@ -250,7 +250,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 24.png",
     discount: 0,
-    id: "11"
+    id: "12"
   },
 
   {
@@ -271,7 +271,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/List 14.png",
     discount: 35,
-    id: "12"
+    id: "13"
   },
 
   {
@@ -292,7 +292,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/List 13.png",
     discount: 0,
-    id: "13"
+    id: "14"
   },
 
   {
@@ -313,7 +313,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/List 4.png",
     discount: 20,
-    id: "14"
+    id: "15"
   },
 
   {
@@ -334,7 +334,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/List 10.png",
     discount: 25,
-    id: "15"
+    id: "16"
   },
 
   {
@@ -355,7 +355,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 17.png",
     discount: 30,
-    id: "16"
+    id: "17"
   },
 
   {
@@ -376,7 +376,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 18.png",
     discount: 0,
-    id: "17"
+    id: "18"
   },
 
   {
@@ -397,7 +397,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 21.png",
     discount: 60,
-    id: "18"
+    id: "19"
   },
   {
     name: "Clifftop Retreat",
@@ -417,7 +417,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
     },
     image: "/assets/Images/image 4.png",
     discount: 0,
-    id: "19"
+    id: "20"
   },
 ];
 
