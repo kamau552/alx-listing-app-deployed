@@ -14,11 +14,7 @@ export default function ListingsPage() {
                 60% Off
               </div>
             )}
-            <Link href={`/property/${property.id}`}>
-              <div>
-                <PropertyCard data={property} property={property}/>
-              </div>
-            </Link>
+            <PropertyCard data={property} property={property} />
           </div>
         ))}
       </div>
@@ -37,4 +33,3 @@ export default function ListingsPage() {
     </div>
   );
 }
-

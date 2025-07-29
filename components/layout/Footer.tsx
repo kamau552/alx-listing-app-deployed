@@ -5,12 +5,11 @@ import { footerLinks } from "@/constants";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col text-gray-500 mt-5 border-t-25 border-teal-600">
-      <div className=" bg-gray-900 w-full" />
+    <footer className="flex flex-col text-gray-500 mt-5 border-t-25 border-teal-600 bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-gray-950">
         <div className="grid gap-10 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo and Description */}
-          <div className="space-y-4">
+          <div className="space-y-4 mr-6">
             <Image
               src="/assets/Logos/alxlogo2.png"
               alt="Logo"
@@ -33,7 +32,7 @@ const Footer = () => {
               <h3 className="text-white font-semibold uppercase text-xs mb-4">
                 {section.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-xs">
                 {section.links.map((link) => (
                   <li key={link.title}>
                     <Link
@@ -57,10 +56,7 @@ const Footer = () => {
             <p className="text-xs text-center md:text-left">
               Some hotels require you to cancel more than 24 hours before
               check-in. Details
-              <Link
-                href="/"
-                className="text-teal-600 hover:text-teal-400 ml-1"
-              >
+              <Link href="/" className="text-teal-600 hover:text-teal-400 ml-1">
                 here
               </Link>
             </p>
